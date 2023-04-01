@@ -1,0 +1,84 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 4em;
+  padding: 0 60px !important;
+  box-shadow: 0px -14px 20px 0px #000 !important;
+}
+
+.navbar .logo {
+  color: #c041ff;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#logo {
+  width: 3rem;
+}
+
+#T,
+#K {
+  color: #6310b6;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-left {
+  flex-grow: 3;
+  margin-right: 150px;
+}
+
+#wishlist {
+  width: 1.3rem;
+  margin-right: 4px;
+}
+
+.nav-right {
+  flex-grow: 1;
+  /* margin-left: 30px; */
+}
+
+.search-bar {
+  background-color: #dee2e6;
+  border-radius: 20px;
+  padding: 0 1rem;
+}
+.search-bar input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.cart {
+  position: relative;
+}
+
+#cart {
+  width: 2rem;
+}
+
+.cart-number {
+  position: absolute;
+  top: -7px;
+  left: 20px;
+  background-color: red;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 50%;
+}
