@@ -12,7 +12,7 @@ export const Cart = () => {
 
   useEffect(() => {
     const fetchCart = async () => {
-      const res = await fetch("http://localhost:8000/user/me", {
+      const res = await fetch("https://rose-doubtful-moth.cyclic.app/user/me", {
         headers: {
           authorization: `Abhi ${localStorage.getItem("token")}`,
         },

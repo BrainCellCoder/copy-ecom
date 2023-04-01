@@ -21,11 +21,14 @@ export const CheckOut = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await fetch("http://localhost:8000/user/me", {
-        headers: {
-          authorization: `Abhi ${localStorage.getItem("token")}`,
-        },
-      });
+      const user = await fetch(
+        "https://rose-doubtful-moth.cyclic.app/user/me",
+        {
+          headers: {
+            authorization: `Abhi ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       const data = await user.json();
       setUserData(data);
     };
@@ -70,7 +73,7 @@ export const CheckOut = () => {
 
   const onSubmit = async (data) => {
     // setLoading(true);
-    const res = await fetch("http://localhost:8000/user/me", {
+    const res = await fetch("https://rose-doubtful-moth.cyclic.app/user/me", {
       method: "POST",
       headers: {
         authorization: `Abhi ${localStorage.getItem("token")}`,

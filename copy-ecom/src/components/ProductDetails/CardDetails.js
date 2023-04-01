@@ -20,14 +20,17 @@ export const CardDetails = (props) => {
   }).format(props.data.price);
 
   const addToCart = async (id) => {
-    const res = await fetch(`http://localhost:8000/user/cart/${id}`, {
-      method: "POST",
-      headers: {
-        authorization: `Abhi ${localStorage.getItem("token")}`,
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://rose-doubtful-moth.cyclic.app/user/cart/${id}`,
+      {
+        method: "POST",
+        headers: {
+          authorization: `Abhi ${localStorage.getItem("token")}`,
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
     console.log(res);
     const data = await res.json();
     console.log(data);
@@ -49,17 +52,20 @@ export const CardDetails = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`http://localhost:8000/review/${props.data._id}/new`, {
-      method: "POST",
-      headers: {
-        authorization: `Abhi ${localStorage.getItem("token")}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        comment: comment,
-        rating: rating,
-      }),
-    })
+    fetch(
+      `https://rose-doubtful-moth.cyclic.app/review/${props.data._id}/new`,
+      {
+        method: "POST",
+        headers: {
+          authorization: `Abhi ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          comment: comment,
+          rating: rating,
+        }),
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to send rating and comment");

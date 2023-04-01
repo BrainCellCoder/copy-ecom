@@ -14,14 +14,17 @@ export const Card = (props) => {
   const navigate = useNavigate();
 
   const addToCart = async (id) => {
-    const res = await fetch(`http://localhost:8000/user/cart/${id}`, {
-      method: "POST",
-      headers: {
-        authorization: `Abhi ${localStorage.getItem("token")}`,
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://rose-doubtful-moth.cyclic.app/user/cart/${id}`,
+      {
+        method: "POST",
+        headers: {
+          authorization: `Abhi ${localStorage.getItem("token")}`,
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await res.json();
     setMessage(data.message);
     if (!data.success) {
@@ -30,14 +33,17 @@ export const Card = (props) => {
   };
 
   const addToWishList = async (id) => {
-    const res = await fetch(`http://localhost:8000/user/wishlist/${id}`, {
-      method: "POST",
-      headers: {
-        authorization: `Abhi ${localStorage.getItem("token")}`,
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://rose-doubtful-moth.cyclic.app/user/wishlist/${id}`,
+      {
+        method: "POST",
+        headers: {
+          authorization: `Abhi ${localStorage.getItem("token")}`,
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await res.json();
     setMessage(data.message);
     if (!data.success) {

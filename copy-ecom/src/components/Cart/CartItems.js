@@ -8,7 +8,7 @@ export const CartItems = (props) => {
   }).format(props.data.price);
 
   const cartRemoveHandler = async (id) => {
-    await fetch(`http://localhost:8000/user/cart/${id}`, {
+    await fetch(`https://rose-doubtful-moth.cyclic.app/user/cart/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Abhi ${localStorage.getItem("token")}`,
@@ -17,7 +17,7 @@ export const CartItems = (props) => {
   };
 
   const addToWishList = async (id) => {
-    await fetch(`http://localhost:8000/user/wishlist/${id}`, {
+    await fetch(`https://rose-doubtful-moth.cyclic.app/user/wishlist/${id}`, {
       method: "POST",
       headers: {
         authorization: `Abhi ${localStorage.getItem("token")}`,
